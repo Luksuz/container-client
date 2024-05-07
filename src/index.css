@@ -3,3 +3,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.background-color{
+  background-color: rgba(52, 157, 231, 0.3);
+}
