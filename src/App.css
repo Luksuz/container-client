@@ -1,0 +1,10 @@
+.App {
+  text-align: center;
+  height: 100vh;
+}
+label {
+  height: 500px;
+}
+#image{
+  display: none;
+}
