@@ -63,12 +63,12 @@ function App() {
 
   return (
     <div 
-      className={`App d-flex justify-content-center align-items-center bg-secondary ${dragOver ? "drag-over" : ""}`}
+      className={`App d-flex flex-wrap justify-content-center align-items-center bg-secondary ${dragOver ? "drag-over" : ""}`}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
     >
-      <label htmlFor="image" className='bg-dark-subtle w-50 align-content-center rounded-5 border border-secondary m-5'>
+      <label htmlFor="image" className='bg-dark-subtle align-content-center rounded-5 border border-secondary col-11 col-md-6 m-5 '>
         {!choosenPicture ? <img src={drop} alt='drop here' width="50%" />
           : <img src={imgUrl} alt="Preview" width="50%" />}
         <input type='file' id='image' name='image' onChange={handlePicture} accept='image/*' style={{ display: 'none' }} />
