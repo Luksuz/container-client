@@ -15,7 +15,7 @@ function App() {
       const file = event.target.files[0];
       await handleFile(file);
     } catch (error) {
-      setError(error.message);
+      setContainerCode(error.message);
       console.error('Error:', error);
     }
   };

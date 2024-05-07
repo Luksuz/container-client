@@ -6,9 +6,9 @@ import fetchPrediction from './APIUtils/imageApi';
 function App() {
   const [choosenPicture, setChoosenPicture] = useState(null);
   const [containerCode, setContainerCode] = useState(null);
-  const [error, setError] = useState(null);
   const [imgUrl, setImgUrl] = useState(null);
   const [dragOver, setDragOver] = useState(false);
+  const [searching, setSearching] = useState(false)
 
   // Event Handlers
   const handlePicture = async (event) => {
@@ -16,7 +16,7 @@ function App() {
       const file = event.target.files[0];
       await handleFile(file);
     } catch (error) {
-      setError("Error handling picture");
+      setContainerCode("Error handling picture");
       console.error('Error handling picture:', error);
     }
   };
@@ -30,35 +30,40 @@ function App() {
     setDragOver(false);
   };
 
-  const handleDrop = (event) => {
+  const handleDrop = async (event) => {
     event.preventDefault();
     const file = event.dataTransfer.files[0];
-    handleFile(file);
+    await handleFile(file);
     setDragOver(false);
   };
 
   // File Handling
   const handleFile = async (file) => {
+    setContainerCode(null);
+    setSearching(true);
     try {
       const url = await readFileAsDataURL(file);
+  
       setImgUrl(url);
       setChoosenPicture(file);
-
+  
       const formData = new FormData();
       formData.append('image', file);
-
       const data = await fetchPrediction(formData);
+  
       if (data.code === 400) {
         setContainerCode(data.message);
       } else {
         setContainerCode(data.serial_number);
       }
     } catch (error) {
-      setError("Error handling file");
+      setContainerCode("Error handling file");
       console.error('Error handling file:', error);
+    } finally {
+    setSearching(false); // Set searching back to false once all operations complete
     }
   };
-
+  
   const readFileAsDataURL = (file) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -76,7 +81,7 @@ function App() {
       onDrop={handleDrop}
     >
       <FormComponent  choosenPicture={choosenPicture} drop={"drop-here.png"} imgUrl={imgUrl} handlePicture={handlePicture}/>
-      <ResultComponent containerCode={containerCode} error={error}/>
+      <ResultComponent containerCode={containerCode} searching={searching}/>
     </div>
   );
 }
