@@ -1,4 +1,5 @@
 async function fetchPrediction(formData) {
+  
     try {
       const response = await fetch("http://52.155.253.3:8080/predict/v1", {
         method: "POST",
