@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Container Serial Number Recognition App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## ABOUT THIS PROJECT
 
-## Available Scripts
+This repository contains the codebase for a container serial number recognition web application. The app allows users to upload an image of a shipping container, and it automatically detects and extracts the serial number region from the image. It then provides the extracted serial number as text, which conforms to the ISO standard (1 10-digit number).
 
-In the project directory, you can run:
+## TO USE THE APP
 
-### `npm start`
+### INSTALLATION
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To use the application locally, follow these steps:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#Clone the repository
 
-### `npm test`
+```bash
+cd client
+npm install
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open the application:
 
-### `npm run build`
+Once the development server starts, open your web browser and navigate to `http://localhost:3000` to access the Container Serial Number Recognition App.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### USAGE
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Upload Image**: Use the provided file upload interface to select and upload an image of a shipping container.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Processing**: The app will automatically process the uploaded image to detect and extract the serial number region.
 
-### `npm run eject`
+3. **Output**: Once processing is complete, the app will display the region of the image where the serial number was detected and provide the extracted serial number in text format.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## FEATURES
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Image Upload**: Allows users to upload images of shipping containers.
+- **Serial Number Recognition**: Automatically detects and extracts the serial number region from the uploaded image.
+- **ISO Standard**: Ensures the extracted serial number conforms to the ISO standard (1 10-digit code).
+- **User-friendly Interface**: Provides a simple and intuitive interface for easy interaction and usage.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## TECHNOLOGIES USED
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **React.js**: Frontend framework for building user interfaces.
+- **HTML/CSS**: Standard web technologies for structure and styling.
 
-## Learn More
+## CONTRIBUTING
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contributions to improve or extend the Container Serial Number Recognition App are welcome. If you have suggestions, feature requests, or bug fixes, please feel free to submit a pull request or open an issue.
