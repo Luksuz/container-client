@@ -1,4 +1,4 @@
-# Container Serial Number Recognition App
+# Container Serial Number Recognition client
 
 ## ABOUT THIS PROJECT
 
