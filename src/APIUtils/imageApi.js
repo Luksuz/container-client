@@ -1,7 +1,7 @@
 async function fetchPrediction(formData) {
   
     try {
-      const response = await fetch("http://52.155.253.3:8080/predict/v1", {
+      const response = await fetch("https://europe-west3-woven-perigee-425918-q9.cloudfunctions.net/containers-server", {
         method: "POST",
         body: formData
       });
